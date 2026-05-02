@@ -6,7 +6,7 @@ CREATE DATABASE IF NOT EXISTS rpg_game_db
 
 USE rpg_game_db;
 
--- Chỉ lưu tài khoản quản trị (đăng nhập qua bảng users)
+-- chỉ lưu tài khoản quản trị (đăng nhập qua bảng users)
 CREATE TABLE IF NOT EXISTS users (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   username VARCHAR(64) NOT NULL UNIQUE,
