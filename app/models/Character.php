@@ -152,4 +152,3 @@ class Character
         return $st->execute($params);
     }
 }
-//

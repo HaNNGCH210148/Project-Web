@@ -46,13 +46,11 @@ class Item
         return $st->execute(['id' => $id]);
     }
 
-    public function searchById(int $id): array
+    public function searchByName(string $name): array
     {
-        $sql = 'SELECT * FROM items WHERE id = :id';
+        $sql = 'SELECT * FROM items WHERE name LIKE :name';
         $st = $this->db->prepare($sql);
-        $st->execute(['id' => $id]);
-        $row = $st->fetch();
-        return $row ? [$row] : [];
+        $st->execute(['name' => '%' . $name . '%']);
+        return $st->fetchAll();
     }
 }
-//
